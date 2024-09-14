@@ -30,6 +30,7 @@ export const TaskSlice = createSlice({
       const index = temp.findIndex((value) => value.id === action.payload.id);
       temp[index] = { ...action.payload };
       state.value = temp;
+      state.filtered = temp
     },
     filteredTask: (state, action: PayloadAction<Task[]>) => {
       state.filtered = action.payload;
